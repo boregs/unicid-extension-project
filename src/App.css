@@ -1,0 +1,44 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    margin: 0;
+    padding: 0;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+}
+
+@layer utilities {
+  /* Utilitários customizados para content-stretch */
+  .content-stretch {
+    align-content: stretch;
+  }
+
+  /* Utilitários para fontes personalizadas */
+  .font-inter-bold {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+  }
+
+  .font-inter-medium {
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+  }
+
+  .font-inter-semibold {
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+  }
+
+  .font-poppins-medium {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+  }
+}

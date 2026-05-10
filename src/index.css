@@ -1,0 +1,205 @@
+@import "tailwindcss";
+
+@layer base {
+  body {
+    margin: 0;
+    padding: 0;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+}
+
+@layer components {
+  /* =========================================
+     COMPONENTE TEXT (Hero)
+     ========================================= */
+  .text-container {
+    @apply content-stretch flex flex-col gap-[32px] items-center leading-[0] not-italic relative shrink-0 text-center w-full;
+  }
+  .text-h1-wrapper {
+    @apply flex flex-col font-['Inter:Bold',sans-serif] font-bold justify-center min-w-full relative shrink-0 text-[64px] text-black tracking-[-1.6px] w-[min-content];
+  }
+  .text-h1 {
+    @apply block leading-[1.1];
+  }
+  .text-p-wrapper {
+    @apply flex flex-col font-['Inter:Medium',sans-serif] font-medium justify-center relative shrink-0 text-[24px] text-[rgba(0,0,0,0.55)] tracking-[-0.12px] w-[729px];
+  }
+  .text-p {
+    @apply leading-[1.45];
+  }
+
+  /* =========================================
+     COMPONENTES BOTÕES
+     ========================================= */
+  .btn-primary {
+    @apply bg-black content-stretch flex items-center justify-center px-[16px] py-[12px] relative rounded-[12px] shrink-0;
+  }
+  .btn-primary-text {
+    @apply flex flex-col font-['Poppins:Medium',sans-serif] justify-center leading-[0] not-italic relative shrink-0 text-[18px] text-center text-white tracking-[-0.09px] whitespace-nowrap;
+  }
+  
+  .btn-secondary {
+    @apply content-stretch flex items-center justify-center px-[16px] py-[12px] relative rounded-[12px] shrink-0;
+  }
+  .btn-secondary-border {
+    @apply absolute border-2 border-[rgba(0,0,0,0.15)] border-solid inset-0 pointer-events-none rounded-[12px];
+  }
+  .btn-secondary-text {
+    @apply flex flex-col font-['Poppins:Medium',sans-serif] justify-center leading-[0] not-italic relative shrink-0 text-[18px] text-black tracking-[-0.09px] whitespace-nowrap;
+  }
+
+  .buttons-group {
+    @apply content-center flex flex-wrap gap-[16px] items-center relative shrink-0;
+  }
+
+  /* =========================================
+     SEÇÕES PRINCIPAIS (Hero, Features, Row)
+     ========================================= */
+  .section-base {
+    @apply relative shrink-0 w-full;
+  }
+  .section-wrapper {
+    @apply flex flex-col items-center size-full;
+  }
+  .hero-content {
+    @apply content-stretch flex flex-col gap-[48px] items-center px-[64px] py-[120px] relative size-full;
+  }
+  .image-wrapper {
+    @apply flex flex-col items-center justify-center size-full;
+  }
+  .image-content {
+    @apply content-stretch flex flex-col items-center justify-center px-[64px] relative size-full;
+  }
+  .hero-image-box {
+    @apply h-[542px] relative rounded-[16px] shrink-0 w-full;
+  }
+
+  /* =========================================
+     UTILITÁRIOS DE IMAGEM
+     ========================================= */
+  .img-fill {
+    @apply absolute inset-0 max-w-none object-cover pointer-events-none rounded-[16px] size-full;
+  }
+
+  /* =========================================
+     COMPONENTES DE CONTEÚDO (Text1 & Text2)
+     ========================================= */
+  .content-text-group {
+    @apply content-stretch flex flex-col gap-[24px] items-start leading-[0] not-italic relative shrink-0 w-full;
+  }
+  .content-h2-wrapper {
+    @apply flex flex-col font-['Inter:Bold',sans-serif] font-bold justify-center relative shrink-0 text-[36px] text-black tracking-[-0.72px] w-full;
+  }
+  .content-h2 {
+    @apply block leading-[1.2];
+  }
+  .content-p-wrapper {
+    @apply flex flex-col font-['Inter:Medium',sans-serif] font-medium justify-center relative shrink-0 text-[18px] text-[rgba(0,0,0,0.55)] tracking-[-0.09px] w-full;
+  }
+
+  /* =========================================
+     ESTRUTURA DE LINHAS (Row 1 & Row 2)
+     ========================================= */
+  .content-block {
+    @apply content-stretch flex flex-[1_0_0] flex-col gap-[48px] h-full items-start justify-center min-w-px relative;
+  }
+  .row-wrapper {
+    @apply flex flex-row items-center justify-center size-full;
+  }
+  .row-content-1 {
+    @apply content-stretch flex gap-[64px] items-center justify-center pb-[40px] pt-[80px] px-[64px] relative size-full;
+  }
+  .row-content-2 {
+    @apply content-stretch flex gap-[64px] items-center justify-center pb-[80px] pt-[40px] px-[64px] relative size-full;
+  }
+  .row-col {
+    @apply flex flex-[1_0_0] flex-row items-center self-stretch;
+  }
+  .feature-container {
+    @apply content-stretch flex flex-col items-center justify-center relative shrink-0 w-full;
+  }
+
+  /* =========================================
+     IMAGENS DE DESTAQUE (Image1 e Image2)
+     ========================================= */
+  .feature-img-col {
+    @apply content-stretch flex flex-[1_0_0] flex-col h-[432px] items-start min-w-px relative;
+  }
+  .feature-img-box-1 {
+    @apply flex-[1_0_0] min-h-px relative rounded-[16px] w-full;
+  }
+  .feature-img-box-2 {
+    @apply h-[432px] relative rounded-[16px] shrink-0 w-[544px];
+  }
+
+  /* =========================================
+     BLOCOS DE TEXTO (Sobre / Desenvolvimento)
+     ========================================= */
+  .text-block-item {
+    @apply content-stretch flex flex-[1_0_0] flex-col gap-[16px] items-start min-w-[324px] pt-[24px] relative;
+  }
+  .text-block-divider {
+    @apply absolute border-[rgba(0,0,0,0.15)] border-solid border-t inset-0 pointer-events-none;
+  }
+  .text-block-title {
+    @apply font-['Inter:Bold',sans-serif] font-bold leading-none not-italic relative shrink-0 text-[24px] text-black tracking-[-0.48px] whitespace-nowrap;
+  }
+  .text-block-p1-wrapper {
+    @apply flex flex-col font-['Inter:Medium',sans-serif] font-medium justify-center leading-[0] min-w-full not-italic relative shrink-0 text-[18px] text-[rgba(0,0,0,0.55)] tracking-[-0.09px] w-[min-content];
+  }
+  .text-block-p2-wrapper {
+    @apply flex flex-col font-['Inter:Medium',sans-serif] font-medium justify-center leading-[0] min-w-full not-italic relative shrink-0 text-[16px] text-[rgba(0,0,0,0.55)] tracking-[-0.08px] w-[min-content];
+  }
+  .text-block-group {
+    @apply content-stretch flex gap-[48px] items-start relative shrink-0 w-full;
+  }
+  .text-row-section {
+    @apply bg-[rgba(0,0,0,0.02)] relative shrink-0 w-full;
+  }
+  .text-row-clip {
+    @apply overflow-clip rounded-[inherit] size-full;
+  }
+  .text-row-content {
+    @apply content-stretch flex flex-col items-start px-[64px] py-[120px] relative size-full;
+  }
+
+  /* =========================================
+     FOOTER & LOGO
+     ========================================= */
+  .logo-box {
+    @apply relative rounded-[8px] shrink-0 size-[32px];
+  }
+  .logo-img {
+    @apply absolute inset-0 max-w-none object-cover pointer-events-none rounded-[8px] size-full;
+  }
+  .company-group {
+    @apply content-stretch flex gap-[8px] items-center relative shrink-0;
+  }
+  .company-name {
+    @apply flex flex-col font-['Inter:Semi_Bold',sans-serif] font-semibold justify-center leading-[0] not-italic relative shrink-0 text-[20px] text-black text-center tracking-[-0.4px] whitespace-nowrap;
+  }
+  .nav-group {
+    @apply content-stretch flex font-['Inter:Medium',sans-serif] font-medium gap-[32px] items-start leading-[0] not-italic relative shrink-0 text-[20px] text-[rgba(0,0,0,0.55)] tracking-[-0.1px] whitespace-nowrap;
+  }
+  .nav-item {
+    @apply flex flex-col justify-center relative shrink-0;
+  }
+  .footer-top-group {
+    @apply content-stretch flex gap-[32px] items-center justify-center relative shrink-0;
+  }
+  .footer-content {
+    @apply content-stretch flex items-center justify-between p-[64px] relative size-full;
+  }
+
+  /* =========================================
+     MAIN APP CONTAINER
+     ========================================= */
+  .main-container {
+    @apply content-stretch flex flex-col items-start relative size-full;
+  }
+}
