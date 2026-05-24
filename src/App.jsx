@@ -2,6 +2,7 @@ import { Link, Routes, Route } from 'react-router-dom'
 import Home from './pages/Home'
 import About from './pages/About'
 import NotFound from './pages/NotFound'
+import Faq from './pages/Faq'
 import './index.css'
 
 function Header() {
@@ -20,6 +21,7 @@ export default function App() {
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="*" element={<NotFound />} />
+        <Route path="/Faq" element={<Faq />}></Route>
       </Routes>
     </>
   )
