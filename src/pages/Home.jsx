@@ -3,6 +3,15 @@ import imgImage from '../assets/enfermeira-atencao-primaria.png'
 import imgImage1 from '../assets/istockphoto-1421626437-612x612.png'
 import imgImage2 from '../assets/a.png'
 import imgImage3 from '../assets/c.png'
+import { Link } from 'react-router-dom'
+import { motion } from 'framer-motion'
+
+const efeitoScroll = {
+  initial: { opacity: 0, y: 50 },
+  whileInView: { opacity: 1, y: 0 },
+  viewport: { once: false, amount: 0.2 },
+  transition: { duration: 0.6 }
+}
 
 function Text() {
   return (
@@ -29,12 +38,12 @@ function PrimaryButton() {
 
 function SecondaryButton() {
   return (
-    <div className="btn-secondary" data-name="Secondary button">
+    <Link to="/Faq" className="btn-secondary" data-name="Secondary button">
       <div aria-hidden="true" className="btn-secondary-border" />
       <div className="btn-secondary-text">
         <p className="leading-[1.45]">Perguntas Frequentes</p>
       </div>
-    </div>
+    </Link>
   );
 }
 
@@ -49,20 +58,20 @@ function Buttons() {
 
 function Hero() {
   return (
-    <section className="section-base" data-name="Hero">
+    <motion.section className="section-base" data-name="Hero" {...efeitoScroll}>
       <div className="section-wrapper">
         <div className="hero-content">
           <Text />
           <Buttons />
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 }
 
 function Image() {
   return (
-    <section className="section-base" data-name="Image">
+    <motion.section className="section-base" data-name="Image" {...efeitoScroll}>
       <div className="image-wrapper">
         <div className="image-content">
           <div className="hero-image-box" data-name="Image">
@@ -70,7 +79,7 @@ function Image() {
           </div>
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 }
 
@@ -107,7 +116,7 @@ function Image1() {
 
 function Row() {
   return (
-    <div className="section-base" data-name="Row 1">
+    <motion.div className="section-base" data-name="Row 1" {...efeitoScroll}>
       <div className="row-wrapper">
         <div className="row-content-1">
           <div className="row-col">
@@ -116,7 +125,7 @@ function Row() {
           <Image1 />
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 }
 
@@ -153,7 +162,7 @@ function Content1() {
 
 function Row1() {
   return (
-    <div className="section-base" data-name="Row 2">
+    <motion.div className="section-base" data-name="Row 2" {...efeitoScroll}>
       <div className="row-wrapper">
         <div className="row-content-2">
           <Image2 />
@@ -162,7 +171,7 @@ function Row1() {
           </div>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 }
 
@@ -210,13 +219,13 @@ function TextBlock() {
 
 function TextRow() {
   return (
-    <section className="text-row-section" data-name="Text row">
+    <motion.section className="text-row-section" data-name="Text row" {...efeitoScroll}>
       <div className="text-row-clip">
         <div className="text-row-content">
           <TextBlock />
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 }
 
@@ -245,9 +254,9 @@ function Nav() {
       <div className="nav-item">
         <p className="leading-[1.45]">Triagem</p>
       </div>
-      <div className="nav-item">
+      <Link to="/Faq" className="nav-item" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
         <p className="leading-[1.45]">FAQs</p>
-      </div>
+      </Link>
     </nav>
   );
 }
@@ -263,13 +272,13 @@ function Text3() {
 
 function Footer() {
   return (
-    <footer className="section-base" data-name="Footer">
+    <motion.footer className="section-base" data-name="Footer" {...efeitoScroll}>
       <div className="row-wrapper">
         <div className="footer-content">
           <Text3 />
         </div>
       </div>
-    </footer>
+    </motion.footer>
   );
 }
 
