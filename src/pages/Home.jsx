@@ -28,11 +28,11 @@ function Text() {
 
 function PrimaryButton() {
   return (
-    <div className="btn-primary" data-name="Primary button">
+    <Link to="/Triagem" className="btn-primary" data-name="Primary button">
       <div className="btn-primary-text">
         <p className="leading-[1.45]">Triagem Online</p>
       </div>
-    </div>
+    </Link>
   );
 }
 
@@ -251,9 +251,9 @@ function Company() {
 function Nav() {
   return (
     <nav className="nav-group" data-name="Nav">
-      <div className="nav-item">
+      <Link to="/Triagem" className="nav-item" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
         <p className="leading-[1.45]">Triagem</p>
-      </div>
+      </Link>
       <Link to="/Faq" className="nav-item" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
         <p className="leading-[1.45]">FAQs</p>
       </Link>
@@ -282,6 +282,18 @@ function Footer() {
   );
 }
 
+function Rodape() {
+  return (
+    <footer className="section-base border-t border-[rgba(0,0,0,0.1)]">
+      <div className="content-stretch flex items-center justify-center px-[32px] py-[32px] relative w-full">
+        <p className="font-inter-medium text-[16px] text-[rgba(0,0,0,0.55)] text-center">
+          © 2026 UBS Padre José de Anchieta - Desenvolvido por alunos UNICID Tatuapé
+        </p>
+      </div>
+    </footer>
+  );
+}
+
 export default function Home() {
   return (
     <main className="main-container" tabIndex="-1" data-name="Container">
@@ -290,6 +302,7 @@ export default function Home() {
       <Feature />
       <TextRow />
       <Footer />
+      <Rodape />
     </main>
   );
 }

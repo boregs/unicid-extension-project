@@ -100,7 +100,6 @@ export default function Faq() {
               ))}
             </div>
           </div>
-          
           <div className="mt-12 flex justify-center">
             <Link to="/" className="btn-primary" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
                 <div className="btn-primary-text">
@@ -108,7 +107,13 @@ export default function Faq() {
                 </div>
             </Link>
           </div>
-
+          <footer className="w-full border-t border-[rgba(0,0,0,0.2)] mt-8">
+            <div className="flex items-center justify-center px-4 py-6">
+              <p className="font-inter-medium text-[15px] text-[rgba(0,0,0,0.55)] text-center">
+                © 2026 UBS Padre José de Anchieta - Desenvolvido por alunos UNICID Tatuapé
+              </p>
+            </div>
+          </footer>
         </div>
       </section>
     </main>

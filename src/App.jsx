@@ -4,6 +4,9 @@ import About from './pages/About'
 import NotFound from './pages/NotFound'
 import Faq from './pages/Faq'
 import './index.css'
+import Triagem from './pages/Triagem'
+
+
 
 function Header() {
   return (
@@ -22,6 +25,7 @@ export default function App() {
         <Route path="/about" element={<About />} />
         <Route path="*" element={<NotFound />} />
         <Route path="/Faq" element={<Faq />}></Route>
+        <Route path="/Triagem" element={<Triagem />} />
       </Routes>
     </>
   )
